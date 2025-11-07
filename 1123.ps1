@@ -4,8 +4,8 @@ curl -UseBasicParsing `
   -OutFile 'C:\\aliyun_agent_latest_setup.exe'
 &"C:\\aliyun_agent_latest_setup.exe" '/S' '--register' `
 '--RegionId="cn-hongkong"' `
-'--ActivationCode="a-hk01p44JTM4NYGRIasU+VhhyyOsYYE"' `
-'--ActivationId="39CE0F0A-DD62-3E7A-AC8A-805F33ED937E"'
+'--ActivationCode="a-hk01p5DRo1DwJCM0GSfJaaoQhZvlJu"' `
+'--ActivationId="457B4854-09AE-3112-96D3-33D225BCCDD6"'
 $identityFile="C:\ProgramData\aliyun\assist\hybrid\instance-id"
 for ($i=1; $i -le 60; $i++) {
    if ([System.IO.File]::Exists(${identityFile})) {
