@@ -1,8 +1,8 @@
 $bucket = "aliyun-client-assist.oss-accelerate.aliyuncs.com"
 curl -UseBasicParsing `
   -Uri https://${bucket}/windows/aliyun_agent_latest_setup.exe `
-  -OutFile 'C:\\aliyun_agent_latest_setup.exe'
-&"C:\\aliyun_agent_latest_setup.exe" '/S' '--register' `
+  -OutFile '%temp%\\aliyun_agent_latest_setup.exe'
+&"%temp%\\aliyun_agent_latest_setup.exe" '/S' '--register' `
 '--RegionId="cn-hongkong"' `
 '--ActivationCode="a-hk01p5DRo1DwJCM0GSfJaaoQhZvlJu"' `
 '--ActivationId="457B4854-09AE-3112-96D3-33D225BCCDD6"'
@@ -21,7 +21,7 @@ for ($i=1; $i -le 60; $i++) {
 } 
 
 echo "download and install CloudMonitor ..."
-mkdir -Force -Path 'C:\Program Files\Alibaba\'; cd 'C:\Program Files\Alibaba\'
+mkdir -Force -Path '%temp%\\Alibaba\'; cd '%temp%\\Alibaba\'
 $bits = if ([Environment]::Is64BitProcess) {"win64"} else {"win32"} 
 curl -UseBasicParsing `
   -Uri https://${bucket}/cloud-monitor/agent_latest_${bits}.zip `
